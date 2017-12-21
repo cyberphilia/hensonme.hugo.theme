@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+<body>
+{{ block "navbar" . }}{{ partial "navbar.html" . }}{{ end }}
+<div id="gradients">
+      <div id="row1"></div>
+      <div id="row2"></div>
+      <div id="row3"></div>
+      <div id="row4"></div>
+      <div id="row5"></div>
+    </div><!-- /.gradients -->
+<div class="outer_container">
+<div class="container content">
+
+{{ block "main" . }}{{ end }}
+
+</div><!-- /.container -->
+</div><!-- /.outer_container -->
+
+{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+</body>
+</html>
