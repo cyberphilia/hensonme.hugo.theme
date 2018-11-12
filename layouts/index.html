@@ -1,43 +1,12 @@
 {{ define "main" }}
-<div class="row">
-      <div class="col-md-6">
-        <h1>About Me</h1>
-        <p class="lead">My name is Jacob Henson.  I’m a developer, InfoSec, industrial security, and a manger.  I work for a Defense Contractor in Huntsville, Alabama.</p>
-      </div>
-      <div class="col-md-6" style="padding-top:20px">
-        <div class="panel rounded" style="padding:8px">
-        <div>
-          <h2>Social</h2>
-          <address>
-            <strong><a href="http://www.henson.me">Jacob Henson</a></strong><br>
-              <abbr title="Phone">P:</abbr> (256) 361-9211
-          </address>
-          <ul class="list-unstyled">
-            <li><a href="https://github.com/cyberphilia">Github</a></li>
-            <li><a href="https://www.linkedin.com/in/jacobhenson">Linked In</a></li>
+{{ .Content }}
 
-          </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-
-
-
-
-  <h2>Recent Posts</h2>
-  {{ range first 10 .Data.Pages }}
-    {{ if eq .Type "post"}}
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ end }}
+<h2>Recent Posts</h2>
+{{ range first 10 .Data.Pages }}
+  {{ if eq .Type "posts"}}
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
   {{ end }}
+{{ end }}
 
-  <h2>pages</h2>
-  {{ range .Data.Pages }}
-    {{ if or (eq .Type "page") (eq .Type "about") }}
-      <h2><a href="{{ .Permalink }}">{{ .Type }} - {{ .Title }} - {{ .RelPermalink }}</a></h2>
-    {{ end }}
-  {{ end }}
+{{ end }}
 
-  {{ end }}
